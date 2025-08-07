@@ -20,8 +20,8 @@ const Categories = () => {
           className="text-neutral-800 mb-4
            text-sm w-2/4 font-medium "
         >
-          Explorez nos catégories de parfum pour homme et pour femme, où chaque
-          fragrance est sélectionnée pour son caractère unique.
+          Explore our men&apos;s and women&apos;s fragrance categories, where
+          each fragrance is selected for its unique character.
         </p>
       </main>
       <main className="flex items-center justify-center w-full gap-8">
@@ -35,15 +35,14 @@ const Categories = () => {
               height={700}
               className=" w-full h-[350px] brightness-75  "
             />
-            <h1 className="text-4xl absolute bottom-0 px-4 py-5 text-white font-serif font-medium mb-4">
-              Men perfumes
-            </h1>
-            <Link
-              href={"/"}
-              className="absolute bottom-4   px-4 text-white text-sm font-header "
-            >
-              View perfumes
-            </Link>
+            <div className="flex flex-col gap-0.5 absolute bottom-0 px-4  py-5 ">
+              <h1 className="text-4xl text-white font-serif font-medium">
+                Men perfumes
+              </h1>
+              <Link href={"/"} className="text-white text-sm font-header ">
+                View perfumes
+              </Link>
+            </div>
           </main>
         </div>
         <div className="flex w-2/4 flex-col items-center gap-2">
@@ -56,15 +55,14 @@ const Categories = () => {
               height={700}
               className=" w-full h-[350px]  brightness-75 "
             />
-            <h1 className="text-4xl absolute bottom-0 px-4  py-5 text-white font-serif font-medium mb-4">
-              Women perfumes
-            </h1>
-            <Link
-              href={"/"}
-              className="absolute bottom-4 px-4 text-white text-sm font-header "
-            >
-              View perfumes
-            </Link>
+            <div className="flex flex-col gap-0.5 absolute bottom-0 px-4  py-5 ">
+              <h1 className="text-4xl text-white font-serif font-medium">
+                Women perfumes
+              </h1>
+              <Link href={"/"} className="text-white text-sm font-header ">
+                View perfumes
+              </Link>
+            </div>
           </main>
         </div>
       </main>
