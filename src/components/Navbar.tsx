@@ -21,7 +21,9 @@ const Navbar = () => {
       </div>
       <main className="flex items-center gap-1.5">
         <Eclipse size={25} />
-        <span className="font-bold text-xl font-header ">ZoneDupes</span>
+        <span className="font-bold text-xl font-header text-nature ">
+          ZoneDupes
+        </span>
       </main>
       <div className="flex items-center gap-12">
         <div className="flex gap-2.5 cursor-pointer hover:bg-neutral-100 py-2 px-4 rounded-md ">
