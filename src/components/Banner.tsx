@@ -3,13 +3,13 @@ import { services } from "../assets/assets";
 
 const Banner = () => {
   return (
-    <section className=" py-12 mt-16 flex items-center justify-center w-11/12 mx-auto ">
-      <main className="grid grid-cols-4 gap-18">
+    <section className="py-5 xl:py-12 mt-6 xl:mt-16 flex items-center justify-center w-11/12 mx-auto ">
+      <main className="grid  grid-cols-2 md:grid-cols-4 gap-10 md:gap-5 xl:gap-18">
         {services.map((service, index) => (
           <div key={index} className="flex gap-4 items-center">
             {service.icon}
             <div className="flex flex-col gap-[1px] ">
-              <h2 className=" font-semibold text-lg text-nature">
+              <h2 className=" font-semibold text-base lg:text-lg text-nature">
                 {" "}
                 {service.title}
               </h2>

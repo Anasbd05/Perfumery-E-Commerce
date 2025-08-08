@@ -5,15 +5,15 @@ import perfumehero from "../assets/perfumehero.jpg";
 
 const Hero = () => {
   return (
-    <section className=" h-screen  -mt-30 flex w-full">
-      <main className="w-2/4 flex flex-col items-center relative">
+    <section className=" -mt-30 flex w-full">
+      <main className="w-2/4 hidden lg:flex flex-col items-center relative">
         <Image
           draggable={false}
           alt=""
           src={perfumehero}
           width={500}
           height={700}
-          className=" w-full h-[650px] "
+          className=" w-full lg:h-[650px] xl:h-[750px]  "
         />
         <p className="text-[12px] uppercase text-center absolute leading-relaxed tracking-wider text-neutral-900 top-50 ">
           Products designed to ignite the senses with timeless elegance. <br />
@@ -21,22 +21,22 @@ const Hero = () => {
           minimalist aesthetics for modern connoisseurs.
         </p>
       </main>
-      <main className="w-2/4 flex flex-col items-center relative">
+      <main className=" w-full lg:w-2/4  flex flex-col items-center relative">
         <Image
           draggable={false}
           alt=""
           src={nature}
           width={500}
           height={700}
-          className=" w-full h-[650px] object-cover"
+          className=" w-full h-[800px] md:h-[900px]  lg:h-[650px] xl:h-[750px] object-cover"
         />
-        <h1 className="text-4xl absolute bottom-50 text-center text-white font-header font-medium leading-snug mb-4">
+        <h1 className="text-3xl md:text-4xl absolute md:top-80 lg:bottom-52 bottom-70 text-center text-white font-header font-medium leading-snug mb-4">
           HOME FRAGRANCE <br /> &PERSONAL PERFUMERY
         </h1>
-        <p className="absolute bottom-10 text-neutral-200 text-center max-w-[300px] mb-6">
+        <p className="absolute bottom-20 md:bottom-60 lg:bottom-10 text-neutral-200 text-center max-w-[300px] mb-6">
           Elevate your environment and self with scents that tell a story
         </p>
-        <button className="bg-black absolute bottom-0 text-white px-10 cursor-pointer py-3 text-sm tracking-widest uppercase hover:opacity-80 transition">
+        <button className="bg-black absolute md:bottom-48 bottom-10 lg:bottom-0 text-white px-10 cursor-pointer py-3 text-sm tracking-widest uppercase hover:opacity-80 transition">
           Go to shop
         </button>
       </main>

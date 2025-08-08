@@ -6,9 +6,9 @@ import Link from "next/link";
 
 const Categories = () => {
   return (
-    <section className="py-20 lg:w-11/12 mx-auto">
-      <main className="flex items-center justify-center w-full gap-8">
-        <div className="flex w-2/4 flex-col mb-4">
+    <section className=" py-14 px-4 sm:px-5 lg:w-11/12 mx-auto">
+      <main className="flex flex-col lg:flex-row items-center justify-center w-full gap-x-8 gap-y-2">
+        <div className="flex w-full lg:w-2/4 flex-col mb-4">
           <h2 className="font-medium text-neutral-800 text-sm">
             Perfume product
           </h2>
@@ -18,14 +18,14 @@ const Categories = () => {
         </div>
         <p
           className="text-neutral-800 mb-4
-           text-sm w-2/4 font-medium "
+           text-sm  w-full lg:w-2/4 font-medium "
         >
           Explore our men&apos;s and women&apos;s fragrance categories, where
           each fragrance is selected for its unique character.
         </p>
       </main>
-      <main className="flex items-center justify-center w-full gap-8">
-        <div className="flex w-2/4 flex-col">
+      <main className="flex flex-col lg:flex-row items-center justify-center w-full gap-8">
+        <div className="flex w-full lg:w-2/4 flex-col">
           <main className="w-full flex flex-coL relative">
             <Image
               draggable={false}
@@ -33,7 +33,7 @@ const Categories = () => {
               src={menperfumes}
               width={500}
               height={700}
-              className=" w-full h-[350px] brightness-75  "
+              className=" w-full h-80 lg:h-[350px] brightness-75  "
             />
             <div className="flex flex-col gap-0.5 absolute bottom-0 px-4  py-5 ">
               <h1 className="text-4xl text-white font-serif font-medium">
@@ -45,7 +45,7 @@ const Categories = () => {
             </div>
           </main>
         </div>
-        <div className="flex w-2/4 flex-col items-center gap-2">
+        <div className="flex w-full lg:w-2/4 flex-col items-center gap-2">
           <main className="w-full flex flex-coL relative">
             <Image
               draggable={false}
