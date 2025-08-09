@@ -26,10 +26,12 @@ const Navbar = () => {
         </span>
       </main>
       <div className="hidden md:flex items-center gap-12">
-        <div className="flex gap-2.5 cursor-pointer hover:bg-neutral-100 py-2 px-4 rounded-md ">
-          <Search size={25} />
-          <span className="font-medium ">Search</span>
-        </div>
+        <Link
+          href={"/contact"}
+          className=" py-2 px-5 bg-nature text-white hover:opacity-80 cursor-pointer rounded-md "
+        >
+          Contact
+        </Link>
         <ShoppingBag
           size={25}
           className=" cursor-pointer hover:text-neutral-800  "

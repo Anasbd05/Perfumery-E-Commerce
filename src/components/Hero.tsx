@@ -33,10 +33,10 @@ const Hero = () => {
         <h1 className="text-3xl md:text-4xl absolute md:top-80 lg:bottom-52 bottom-70 text-center text-white font-header font-medium leading-snug mb-4">
           HOME FRAGRANCE <br /> &PERSONAL PERFUMERY
         </h1>
-        <p className="absolute bottom-20 md:bottom-60 lg:bottom-10 text-neutral-200 text-center max-w-[300px] mb-6">
+        <p className="absolute bottom-40 md:bottom-60 lg:bottom-30 text-neutral-200 text-center max-w-[300px] mb-6">
           Elevate your environment and self with scents that tell a story
         </p>
-        <button className="bg-black absolute md:bottom-48 bottom-10 lg:bottom-0 text-white px-10 cursor-pointer py-3 text-sm tracking-widest uppercase hover:opacity-80 transition">
+        <button className="bg-black absolute md:bottom-48 bottom-30 lg:bottom-20 text-white px-10 cursor-pointer py-3 text-sm tracking-widest uppercase hover:opacity-80 transition">
           Go to shop
         </button>
       </main>
