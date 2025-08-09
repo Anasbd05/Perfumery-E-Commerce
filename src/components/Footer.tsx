@@ -32,7 +32,7 @@ const Footer = () => {
                 href="#"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:opacity-75"
+                className="text-blue-600 transition hover:opacity-80"
               >
                 <span className="sr-only">Facebook</span>
 
@@ -56,7 +56,7 @@ const Footer = () => {
                 href="#"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:opacity-75"
+                className="text-pink-600 transition hover:opacity-80"
               >
                 <span className="sr-only">Instagram</span>
 

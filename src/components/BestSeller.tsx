@@ -17,7 +17,7 @@ const BestSeller = () => {
       <main className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-10 mt-6 ">
         {bestSellers.map((perfume, index) => (
           <Link
-            href={"/allperfumes/1"}
+            href={`/perfumes/${perfume.title.replaceAll(" ", "")}`}
             className="flex flex-col p-2 hover:scale-105 cursor-pointer duration-500 "
             key={index}
           >
