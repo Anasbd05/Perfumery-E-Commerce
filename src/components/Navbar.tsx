@@ -1,4 +1,4 @@
-import { Eclipse, Search, ShoppingBag } from "lucide-react";
+import { Eclipse, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 

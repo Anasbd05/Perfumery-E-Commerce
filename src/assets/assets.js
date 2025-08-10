@@ -38,6 +38,7 @@ export const services = [
 
 export const bestSellers = [
   {
+    brandName: "Dior",
     title: "Bleu de Chanel",
     price: 540,
     image: perfume1,
@@ -60,6 +61,7 @@ export const bestSellers = [
     genre: "Men",
   },
   {
+    brandName: "Dior",
     title: "Sauvage Elixir",
     price: 350,
     image: perfume2,
@@ -82,6 +84,7 @@ export const bestSellers = [
     genre: "Men",
   },
   {
+    brandName: "Chanel",
     title: "Creed Aventus",
     price: 400,
     image: perfume3,
@@ -103,7 +106,8 @@ export const bestSellers = [
     genre: "Men",
   },
   {
-    title: "Tom Ford Black Orchid",
+    brandName: "Tom Ford",
+    title: "Black Orchid",
     price: 350,
     image: perfume4,
     aboutBrand:

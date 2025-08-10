@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import nature from "../assets/nature.jpg";
 import perfumehero from "../assets/perfumehero.jpg";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -36,9 +37,12 @@ const Hero = () => {
         <p className="absolute bottom-40 md:bottom-60 lg:bottom-30 text-neutral-200 text-center max-w-[300px] mb-6">
           Elevate your environment and self with scents that tell a story
         </p>
-        <button className="bg-black absolute md:bottom-48 bottom-30 lg:bottom-20 text-white px-10 cursor-pointer py-3 text-sm tracking-widest uppercase hover:opacity-80 transition">
+        <Link
+          href={"/perfumes"}
+          className="bg-black absolute md:bottom-48 bottom-30 lg:bottom-20 text-white px-10 cursor-pointer py-3 text-sm tracking-widest uppercase hover:opacity-80 transition"
+        >
           Go to shop
-        </button>
+        </Link>
       </main>
     </section>
   );
