@@ -1,12 +1,13 @@
 import { bestSellers, perfumes } from "@/assets/assets";
 import { ListFilter, Search } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const ALLPerfumes = () => {
   return (
     <section className="">
-      <div className="flex flex-col bg-neutral-100 items-center py-20 gap-7">
+      <div className="flex flex-col items-center py-20 gap-7">
         <div className="flex flex-col items-center">
           <h1 className="text-4xl mb-2 font-bold text-nature font-header">
             Discover Our Collections
@@ -54,7 +55,11 @@ const ALLPerfumes = () => {
           {/* perfumes cards */}
           <main className=" w-4/5 grid grid-cols-4 gap-4 ">
             {bestSellers.map((perfume, index) => (
-              <div key={index} className="flex shadow-md rounded-md flex-col">
+              <Link
+                href={`/perfumes/${perfume.title.replaceAll(" ", "")}`}
+                key={index}
+                className="flex shadow-md rounded-md flex-col"
+              >
                 <Image
                   alt=""
                   className="h-44 md:h-52 bg-gray-100  "
@@ -76,7 +81,7 @@ const ALLPerfumes = () => {
                     </button>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </main>
         </main>

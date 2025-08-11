@@ -45,15 +45,15 @@ export const bestSellers = [
     aboutBrand:
       "Chanel is a legendary French luxury brand established in 1910, famous for timeless style and iconic fragrances.",
     notes: [
-      "Grapefruit",
-      "Lemon",
-      "Mint",
-      "Pink Pepper",
-      "Ginger",
-      "Sandalwood",
-      "Cedar",
-      "Amber",
-      "Incense",
+      { name: "Grapefruit", percent: "80%" }, // Top
+      { name: "Lemon", percent: "70%" }, // Top
+      { name: "Mint", percent: "65%" }, // Top
+      { name: "Pink Pepper", percent: "50%" }, // Middle
+      { name: "Ginger", percent: "45%" }, // Middle
+      { name: "Sandalwood", percent: "30%" }, // Base
+      { name: "Cedar", percent: "25%" }, // Base
+      { name: "Amber", percent: "20%" }, // Base
+      { name: "Incense", percent: "15%" }, // Base
     ],
     characteristics: ["Woody", "Citrusy", "Aromatic", "Elegant"],
     perfumer: "Jacques Polge",
@@ -68,15 +68,15 @@ export const bestSellers = [
     aboutBrand:
       "Dior is a French luxury fashion house founded in 1946, known for elegance, innovation, and high-quality fragrances.",
     notes: [
-      "Cinnamon",
-      "Nutmeg",
-      "Cardamom",
-      "Grapefruit",
-      "Lavender",
-      "Licorice",
-      "Sandalwood",
-      "Amber",
-      "Patchouli",
+      { name: "Cinnamon", percent: "85%" }, // Top
+      { name: "Nutmeg", percent: "75%" }, // Top
+      { name: "Cardamom", percent: "70%" }, // Top
+      { name: "Grapefruit", percent: "55%" }, // Middle
+      { name: "Lavender", percent: "50%" }, // Middle
+      { name: "Licorice", percent: "35%" }, // Base
+      { name: "Sandalwood", percent: "30%" }, // Base
+      { name: "Amber", percent: "25%" }, // Base
+      { name: "Patchouli", percent: "20%" }, // Base
     ],
     characteristics: ["Spicy", "Woody", "Intense", "Long-lasting"],
     perfumer: "François Demachy",
@@ -91,14 +91,14 @@ export const bestSellers = [
     aboutBrand:
       "Creed is a luxury perfume house founded in 1760, known for high-quality, handcrafted fragrances.",
     notes: [
-      "Pineapple",
-      "Blackcurrant",
-      "Apple",
-      "Birch",
-      "Patchouli",
-      "Musk",
-      "Oakmoss",
-      "Vanilla",
+      { name: "Pineapple", percent: "90%" }, // Top
+      { name: "Blackcurrant", percent: "80%" }, // Top
+      { name: "Apple", percent: "70%" }, // Top
+      { name: "Birch", percent: "55%" }, // Middle
+      { name: "Patchouli", percent: "45%" }, // Middle
+      { name: "Musk", percent: "35%" }, // Base
+      { name: "Oakmoss", percent: "30%" }, // Base
+      { name: "Vanilla", percent: "25%" }, // Base
     ],
     characteristics: ["Fruity", "Smoky", "Masculine", "Elegant"],
     perfumer: "Olivier Creed",
@@ -113,14 +113,14 @@ export const bestSellers = [
     aboutBrand:
       "Tom Ford is an American luxury fashion label founded in 2005, recognized for bold and sensual fragrances.",
     notes: [
-      "Black Truffle",
-      "Ylang-Ylang",
-      "Bergamot",
-      "Blackcurrant",
-      "Lotus Wood",
-      "Patchouli",
-      "Vanilla",
-      "Incense",
+      { name: "Black Truffle", percent: "85%" }, // Top
+      { name: "Ylang-Ylang", percent: "75%" }, // Top
+      { name: "Bergamot", percent: "70%" }, // Top
+      { name: "Blackcurrant", percent: "55%" }, // Middle
+      { name: "Lotus Wood", percent: "50%" }, // Middle
+      { name: "Patchouli", percent: "35%" }, // Base
+      { name: "Vanilla", percent: "30%" }, // Base
+      { name: "Incense", percent: "25%" }, // Base
     ],
     characteristics: ["Rich", "Oriental", "Opulent", "Unisex"],
     perfumer: "David Apel",
