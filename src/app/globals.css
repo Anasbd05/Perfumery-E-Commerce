@@ -4,3 +4,7 @@
   --font-header: var(--font-noto);
   --color-nature: #0a400c;
 }
+
+html {
+  scroll-behavior: smooth;
+}

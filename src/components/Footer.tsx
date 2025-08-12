@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -14,12 +15,12 @@ const Footer = () => {
             collection of premium perfumes.
           </p>
 
-          <a
-            href="#"
+          <Link
+            href="/perfumes"
             className="mt-8 inline-block rounded-full border border-nature px-18 py-3 text-sm font-medium text-nature hover:bg-nature hover:text-white focus:ring-3 focus:outline-hidden"
           >
             Go Shop
-          </a>
+          </Link>
         </div>
 
         <div className="mt-16 border-t border-gray-700 pt-8 sm:flex sm:items-center sm:justify-between lg:mt-24">

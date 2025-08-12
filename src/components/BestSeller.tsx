@@ -9,7 +9,7 @@ const BestSeller = () => {
     <section className=" py-14 px-4 sm:px-5 lg:w-11/12 mx-auto">
       <div className="flex justify-between items-center">
         <h2 className=" font-semibold text-2xl">Best sellers</h2>
-        <Link href={"/allperfumes"} className="flex gap-0.5 items-center">
+        <Link href={"/perfumes"} className="flex gap-0.5 items-center">
           <h5 className="text-sm">All products</h5>
           <ArrowRight className=" font-medium" size={20} />
         </Link>

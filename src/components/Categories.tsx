@@ -39,7 +39,10 @@ const Categories = () => {
               <h1 className="text-4xl text-white font-serif font-medium">
                 Men perfumes
               </h1>
-              <Link href={"/"} className="text-white text-sm font-header ">
+              <Link
+                href={"/perfumes/men"}
+                className="text-white text-sm font-header "
+              >
                 View perfumes
               </Link>
             </div>
@@ -59,7 +62,10 @@ const Categories = () => {
               <h1 className="text-4xl text-white font-serif font-medium">
                 Women perfumes
               </h1>
-              <Link href={"/"} className="text-white text-sm font-header ">
+              <Link
+                href={"/perfumes/women"}
+                className="text-white text-sm font-header "
+              >
                 View perfumes
               </Link>
             </div>

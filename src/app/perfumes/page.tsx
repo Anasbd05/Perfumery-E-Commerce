@@ -1,10 +1,13 @@
+"use client";
 import { bestSellers, perfumes } from "@/assets/assets";
 import { ListFilter, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const ALLPerfumes = () => {
+  const [perfumeSearch, setperfumeSearch] = useState("");
+
   return (
     <section className="">
       <div className="flex flex-col items-center py-20 gap-7">
@@ -20,6 +23,8 @@ const ALLPerfumes = () => {
         <div className="flex items-center gap-2.5 w-80 lg:w-[630px] shadow px-4 hover:shadow-md border rounded-full border-neutral-300 ">
           <Search className=" text-neutral-400 " size={22} />
           <input
+            value={perfumeSearch}
+            onChange={(e) => setperfumeSearch(e.target.value)}
             type="text"
             placeholder="Search fragrances..."
             className="outline-none border-none text-sm w-full py-3 bg-transparent "
@@ -54,35 +59,45 @@ const ALLPerfumes = () => {
           </div>
           {/* perfumes cards */}
           <main className=" w-4/5 grid grid-cols-4 gap-4 ">
-            {bestSellers.map((perfume, index) => (
-              <Link
-                href={`/perfumes/${perfume.title.replaceAll(" ", "")}`}
-                key={index}
-                className="flex shadow-md rounded-md flex-col"
-              >
-                <Image
-                  alt=""
-                  className="h-44 md:h-52 bg-gray-100  "
-                  src={perfume.image}
-                />
-                <div className="flex flex-col gap-2 px-2 py-4">
-                  <div className="flex flex-col ">
-                    <h4 className=" text-nature uppercase text-lg font-semibold font-header ">
-                      {perfume.brandName}
-                    </h4>
-                    <h2 className="font-medium text-sm ">{perfume.title} </h2>
+            {bestSellers
+              .filter(
+                (item) =>
+                  item.title
+                    .toLowerCase()
+                    .includes(perfumeSearch.toLowerCase()) ||
+                  item.brandName
+                    .toLowerCase()
+                    .includes(perfumeSearch.toLowerCase())
+              )
+              .map((perfume, index) => (
+                <Link
+                  href={`/perfumes/${perfume.title.replaceAll(" ", "")}`}
+                  key={index}
+                  className="flex shadow-md rounded-md flex-col"
+                >
+                  <Image
+                    alt=""
+                    className="h-44 md:h-52 bg-gray-100  "
+                    src={perfume.image}
+                  />
+                  <div className="flex flex-col gap-2 px-2 py-4">
+                    <div className="flex flex-col ">
+                      <h4 className=" text-nature uppercase text-lg font-semibold font-header ">
+                        {perfume.brandName}
+                      </h4>
+                      <h2 className="font-medium text-sm ">{perfume.title} </h2>
+                    </div>
+                    <div className="flex justify-between mt-1.5 items-center">
+                      <span className=" font-semibold text-nature text-sm ">
+                        ${perfume.price}
+                      </span>
+                      <button className=" py-1.5 text-sm px-4 rounded-full bg-black cursor-pointer hover:opacity-80 text-white ">
+                        Add to cart
+                      </button>
+                    </div>
                   </div>
-                  <div className="flex justify-between mt-1.5 items-center">
-                    <span className=" font-semibold text-nature text-sm ">
-                      ${perfume.price}
-                    </span>
-                    <button className=" py-1.5 text-sm px-4 rounded-full bg-black cursor-pointer hover:opacity-80 text-white ">
-                      Add to cart
-                    </button>
-                  </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
           </main>
         </main>
       </section>

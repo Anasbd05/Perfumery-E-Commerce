@@ -27,7 +27,7 @@ const Navbar = () => {
       </main>
       <div className="hidden md:flex items-center gap-12">
         <Link
-          href={"/contact"}
+          href={"#contact"}
           className=" py-2 px-5 bg-nature text-white hover:opacity-80 cursor-pointer rounded-md "
         >
           Contact
