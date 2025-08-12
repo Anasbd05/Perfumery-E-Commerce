@@ -1,24 +1,24 @@
 "use client";
-
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MoveRight, ArrowBigDownDash, ArrowBigUpDash } from "lucide-react";
-import { bestSellers } from "@/assets/assets";
+import { perfumes } from "@/assets/assets";
 
 const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
   const { title } = React.use(params);
 
-  const selectedPerfume = bestSellers.find(
+  const selectedPerfume = perfumes.find(
     (perfume) => perfume.title.replaceAll(" ", "") === title
   );
 
   const [view, setView] = useState<"details" | "brand">("details");
   const [showAllNotes, setShowAllNotes] = useState(false);
+  const [selectedSize, setSelectedSize] = useState("");
 
   return (
     <section className="py-14">
-      <main className="grid grid-cols-3 gap-10 w-[95%] mx-auto">
+      <main className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 w-[95%] mx-auto">
         {/* First section */}
         <section className="flex flex-col">
           <div>
@@ -31,8 +31,13 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
           <div className="flex items-center gap-3 mt-10">
             {["30 ml", "50 ml", "100 ml"].map((size, idx) => (
               <button
+                onClick={() => setSelectedSize(size)}
                 key={idx}
-                className="py-2 px-4 bg-black text-white rounded-sm"
+                className={` ${
+                  size === selectedSize
+                    ? " py-2 px-4 bg-black text-white  rounded-sm "
+                    : "py-2 px-4 border border-neutral-300 shadow cursor-pointer  rounded-sm"
+                }`}
               >
                 {size}
               </button>

@@ -12,6 +12,16 @@ import perfume1 from "./products/perfume1.png";
 import perfume2 from "./products/perfume2.png";
 import perfume3 from "./products/perfume3.png";
 import perfume4 from "./products/perfume4.png";
+import perfume5 from "./products/perfume5.png";
+import perfume6 from "./products/perfume6.png";
+import perfume7 from "./products/perfume7.png";
+import perfume8 from "./products/perfume8.png";
+import perfume9 from "./products/perfume9.png";
+import perfume10 from "./products/perfume10.png";
+import perfume11 from "./products/perfume11.png";
+import perfume12 from "./products/perfume12.png";
+import perfume13 from "./products/perfume13.png";
+import perfume14 from "./products/perfume14.png";
 
 export const services = [
   {
@@ -21,7 +31,7 @@ export const services = [
   },
   {
     icon: <CreditCard size={40} className=" text-nature " />,
-    title: "Quick Payments",
+    title: "Quick PayMalets",
     desc: "100% Secure",
   },
   {
@@ -37,6 +47,28 @@ export const services = [
 ];
 
 export const bestSellers = [
+  {
+    brandName: "Chanel",
+    title: "Creed Aventus",
+    price: 400,
+    image: perfume3,
+    aboutBrand:
+      "Creed is a luxury perfume house founded in 1760, known for high-quality, handcrafted fragrances.",
+    notes: [
+      { name: "Pineapple", percent: "90%" }, // Top
+      { name: "Blackcurrant", percent: "80%" }, // Top
+      { name: "Apple", percent: "70%" }, // Top
+      { name: "Birch", percent: "55%" }, // Middle
+      { name: "Patchouli", percent: "45%" }, // Middle
+      { name: "Musk", percent: "35%" }, // Base
+      { name: "Oakmoss", percent: "30%" }, // Base
+      { name: "Vanilla", percent: "25%" }, // Base
+    ],
+    characteristics: ["Fruity", "Smoky", "Masculine", "Elegant"],
+    perfumer: "Olivier Creed",
+    releaseDate: "2010",
+    genre: "Male",
+  },
   {
     brandName: "Dior",
     title: "Bleu de Chanel",
@@ -58,7 +90,7 @@ export const bestSellers = [
     characteristics: ["Woody", "Citrusy", "Aromatic", "Elegant"],
     perfumer: "Jacques Polge",
     releaseDate: "2010",
-    genre: "Men",
+    genre: "Male",
   },
   {
     brandName: "Dior",
@@ -81,7 +113,7 @@ export const bestSellers = [
     characteristics: ["Spicy", "Woody", "Intense", "Long-lasting"],
     perfumer: "François Demachy",
     releaseDate: "2021",
-    genre: "Men",
+    genre: "Male",
   },
   {
     brandName: "Chanel",
@@ -103,7 +135,7 @@ export const bestSellers = [
     characteristics: ["Fruity", "Smoky", "Masculine", "Elegant"],
     perfumer: "Olivier Creed",
     releaseDate: "2010",
-    genre: "Men",
+    genre: "Male",
   },
   {
     brandName: "Tom Ford",
@@ -129,6 +161,205 @@ export const bestSellers = [
   },
 ];
 
+export const perfumes = [
+  {
+    brandName: "Dior",
+    title: "Sauvage Eau de Parfum",
+    price: 120,
+    image: perfume5,
+    aboutBrand:
+      "Dior is a French luxury fashion house founded in 1946, known for elegance, innovation, and quality fragrances.",
+    notes: [
+      { name: "Bergamot", percent: "90%" },
+      { name: "Sichuan Pepper", percent: "80%" },
+      { name: "Ambroxan", percent: "70%" },
+      { name: "Vanilla", percent: "60%" },
+    ],
+    characteristics: ["Fresh", "Spicy", "Woody", "Long-lasting"],
+    perfumer: "François Demachy",
+    releaseDate: "2018",
+    genre: "Male",
+  },
+  {
+    brandName: "Chanel",
+    title: "Coco Mademoiselle",
+    price: 135,
+    image: perfume6,
+    aboutBrand:
+      "Chanel is a legendary French luxury brand established in 1910, famous for timeless style and iconic fragrances.",
+    notes: [
+      { name: "Orange", percent: "85%" },
+      { name: "Jasmine", percent: "80%" },
+      { name: "Rose", percent: "75%" },
+      { name: "Patchouli", percent: "60%" },
+      { name: "Vetiver", percent: "50%" },
+    ],
+    characteristics: ["Floral", "Citrusy", "Elegant", "Feminine"],
+    perfumer: "Jacques Polge",
+    releaseDate: "2001",
+    genre: "Female",
+  },
+  {
+    brandName: "Tom Ford",
+    title: "Black Orchid",
+    price: 150,
+    image: perfume7,
+    aboutBrand:
+      "Tom Ford is an American luxury fashion label founded in 2005, recognized for bold and sensual fragrances.",
+    notes: [
+      { name: "Black Truffle", percent: "85%" },
+      { name: "Ylang-Ylang", percent: "80%" },
+      { name: "Bergamot", percent: "75%" },
+      { name: "Blackcurrant", percent: "65%" },
+      { name: "Patchouli", percent: "50%" },
+      { name: "Vanilla", percent: "45%" },
+    ],
+    characteristics: ["Rich", "Oriental", "Opulent", "Unisex"],
+    perfumer: "David Apel",
+    releaseDate: "2006",
+    genre: "Unisex",
+  },
+  {
+    brandName: "Yves Saint Laurent",
+    title: "Libre Eau de Parfum",
+    price: 130,
+    image: perfume8,
+    aboutBrand:
+      "Yves Saint Laurent, founded in 1961, is known for edgy elegance and artistic fragrances.",
+    notes: [
+      { name: "Lavender", percent: "85%" },
+      { name: "Mandarin Orange", percent: "75%" },
+      { name: "Jasmine", percent: "70%" },
+      { name: "Vanilla", percent: "55%" },
+      { name: "Ambergris", percent: "45%" },
+    ],
+    characteristics: ["Floral", "Fresh", "Bold", "Long-lasting"],
+    perfumer: "Anne Flipo & Carlos Benaïm",
+    releaseDate: "2019",
+    genre: "Female",
+  },
+  {
+    brandName: "Giorgio Armani",
+    title: "Acqua di Gio Profumo",
+    price: 125,
+    image: perfume9,
+    aboutBrand:
+      "Giorgio Armani is an Italian luxury brand known for minimalist style and refined scents.",
+    notes: [
+      { name: "Sea Notes", percent: "90%" },
+      { name: "Bergamot", percent: "85%" },
+      { name: "Sage", percent: "75%" },
+      { name: "Rosemary", percent: "60%" },
+      { name: "Patchouli", percent: "50%" },
+      { name: "Incense", percent: "40%" },
+    ],
+    characteristics: ["Aquatic", "Aromatic", "Sophisticated", "Masculine"],
+    perfumer: "Alberto Morillas",
+    releaseDate: "2015",
+    genre: "Male",
+  },
+  {
+    brandName: "Creed",
+    title: "Aventus",
+    price: 350,
+    image: perfume10,
+    aboutBrand:
+      "Creed is a luxury perfume house founded in 1760, known for high-quality, handcrafted fragrances.",
+    notes: [
+      { name: "Pineapple", percent: "90%" },
+      { name: "Blackcurrant", percent: "80%" },
+      { name: "Birch", percent: "70%" },
+      { name: "Musk", percent: "60%" },
+      { name: "Oakmoss", percent: "50%" },
+    ],
+    characteristics: ["Fruity", "Smoky", "Masculine", "Elegant"],
+    perfumer: "Olivier Creed",
+    releaseDate: "2010",
+    genre: "Male",
+  },
+  {
+    brandName: "Lancôme",
+    title: "La Vie Est Belle",
+    price: 130,
+    image: perfume11,
+    aboutBrand:
+      "Lancôme is a French luxury perfumes and cosmetics house founded in 1935, known for elegance and femininity.",
+    notes: [
+      { name: "Black Currant", percent: "85%" },
+      { name: "Pear", percent: "80%" },
+      { name: "Iris", percent: "75%" },
+      { name: "Jasmine", percent: "65%" },
+      { name: "Orange Blossom", percent: "60%" },
+      { name: "Praline", percent: "50%" },
+      { name: "Vanilla", percent: "45%" },
+    ],
+    characteristics: ["Sweet", "Floral", "Elegant", "Feminine"],
+    perfumer: "Olivier Polge, Dominique Ropion",
+    releaseDate: "2012",
+    genre: "Female",
+  },
+  {
+    brandName: "Hermès",
+    title: "Terre Hermes",
+    price: 125,
+    image: perfume12,
+    aboutBrand:
+      "Hermès is a French high-fashion luxury goods manufacturer established in 1837, renowned for craftsmanship.",
+    notes: [
+      { name: "Orange", percent: "90%" },
+      { name: "Grapefruit", percent: "85%" },
+      { name: "Pepper", percent: "75%" },
+      { name: "Pelargonium", percent: "65%" },
+      { name: "Vetiver", percent: "55%" },
+      { name: "Cedar", percent: "50%" },
+    ],
+    characteristics: ["Woody", "Earthy", "Citrusy", "Masculine"],
+    perfumer: "Jean-Claude Ellena",
+    releaseDate: "2006",
+    genre: "Male",
+  },
+  {
+    brandName: "Paco Rabanne",
+    title: "1 Million",
+    price: 110,
+    image: perfume13,
+    aboutBrand:
+      "Paco Rabanne is a Spanish fashion house known for bold designs and distinctive fragrances.",
+    notes: [
+      { name: "Blood Mandarin", percent: "85%" },
+      { name: "Grapefruit", percent: "80%" },
+      { name: "Mint", percent: "75%" },
+      { name: "Cinnamon", percent: "65%" },
+      { name: "Rose", percent: "55%" },
+      { name: "Amber", percent: "50%" },
+      { name: "Leather", percent: "45%" },
+    ],
+    characteristics: ["Sweet", "Spicy", "Bold", "Masculine"],
+    perfumer: "Christophe Raynaud, Olivier Pescheux, Michel Girard",
+    releaseDate: "2008",
+    genre: "Male",
+  },
+  {
+    brandName: "Jo Malone",
+    title: "Peony And Blush Suede",
+    price: 140,
+    image: perfume14,
+    aboutBrand:
+      "Jo Malone London is a British fragrance brand known for elegant and simplistic scents.",
+    notes: [
+      { name: "Red Apple", percent: "85%" },
+      { name: "Peony", percent: "80%" },
+      { name: "Jasmine", percent: "75%" },
+      { name: "Carnation", percent: "65%" },
+      { name: "Suede", percent: "50%" },
+    ],
+    characteristics: ["Floral", "Fresh", "Soft", "Feminine"],
+    perfumer: "Christine Nagel",
+    releaseDate: "2013",
+    genre: "Female",
+  },
+];
+
 export const contacts = [
   {
     title: "Address",
@@ -149,211 +380,5 @@ export const contacts = [
     title: "Buesiness Hours",
     des: "Mon-Fri: 8:30am - 6pm",
     icon: <Clock size={35} className=" text-emerald-400 " />,
-  },
-];
-
-export const perfumes = [
-  {
-    brandName: "Dior",
-    perfumeName: "Sauvage Eau de Parfum",
-    price: 120,
-    aboutBrand:
-      "Dior is a French luxury fashion house founded in 1946, known for elegance, innovation, and quality fragrances.",
-    notes: ["Bergamot", "Sichuan Pepper", "Ambroxan", "Vanilla"],
-    fragances: ["Fresh", "Spicy", "Woody", "Long-lasting"],
-    perfumer: "François Demachy",
-    releaseDate: "2018",
-    genre: "Men",
-    image: "",
-  },
-  {
-    brandName: "Chanel",
-    perfumeName: "Coco Mademoiselle",
-    price: 135,
-    aboutBrand:
-      "Chanel is a legendary French luxury brand established in 1910, famous for timeless style and iconic fragrances.",
-    notes: ["Orange", "Jasmine", "Rose", "Patchouli", "Vetiver"],
-    fragances: ["Floral", "Citrusy", "Elegant", "Feminine"],
-    perfumer: "Jacques Polge",
-    releaseDate: "2001",
-    genre: "Women",
-    image: "",
-  },
-  {
-    brandName: "Tom Ford",
-    perfumeName: "Black Orchid",
-    price: 150,
-    aboutBrand:
-      "Tom Ford is an American luxury fashion label founded in 2005, recognized for bold and sensual fragrances.",
-    notes: [
-      "Black Truffle",
-      "Ylang-Ylang",
-      "Bergamot",
-      "Blackcurrant",
-      "Patchouli",
-      "Vanilla",
-    ],
-    fragances: ["Rich", "Oriental", "Opulent", "Unisex"],
-    perfumer: "David Apel",
-    releaseDate: "2006",
-    genre: "Unisex",
-    image: "",
-  },
-  {
-    brandName: "Yves Saint Laurent",
-    perfumeName: "Libre Eau de Parfum",
-    price: 130,
-    aboutBrand:
-      "Yves Saint Laurent, founded in 1961, is known for edgy elegance and artistic fragrances.",
-    notes: ["Lavender", "Mandarin Orange", "Jasmine", "Vanilla", "Ambergris"],
-    fragances: ["Floral", "Fresh", "Bold", "Long-lasting"],
-    perfumer: "Anne Flipo & Carlos Benaïm",
-    releaseDate: "2019",
-    genre: "Women",
-    image: "",
-  },
-  {
-    brandName: "Giorgio Armani",
-    perfumeName: "Acqua di Giò Profumo",
-    price: 125,
-    aboutBrand:
-      "Giorgio Armani is an Italian luxury brand known for minimalist style and refined scents.",
-    notes: [
-      "Sea Notes",
-      "Bergamot",
-      "Sage",
-      "Rosemary",
-      "Patchouli",
-      "Incense",
-    ],
-    fragances: ["Aquatic", "Aromatic", "Sophisticated", "Masculine"],
-    perfumer: "Alberto Morillas",
-    releaseDate: "2015",
-    genre: "Men",
-    image: "",
-  },
-  {
-    brandName: "Creed",
-    perfumeName: "Aventus",
-    price: 350,
-    aboutBrand:
-      "Creed is a luxury perfume house founded in 1760, known for high-quality, handcrafted fragrances.",
-    notes: ["Pineapple", "Blackcurrant", "Birch", "Musk", "Oakmoss"],
-    fragances: ["Fruity", "Smoky", "Masculine", "Elegant"],
-    perfumer: "Olivier Creed",
-    releaseDate: "2010",
-    genre: "Men",
-    image: "",
-  },
-  {
-    brandName: "Maison Francis Kurkdjian",
-    perfumeName: "Baccarat Rouge 540",
-    price: 325,
-    aboutBrand:
-      "Maison Francis Kurkdjian is a French luxury perfume house founded in 2009, known for artistic scents.",
-    notes: ["Saffron", "Amberwood", "Ambergris", "Fir Resin", "Jasmine"],
-    fragances: ["Sweet", "Amber", "Unisex", "Long-lasting"],
-    perfumer: "Francis Kurkdjian",
-    releaseDate: "2015",
-    genre: "Unisex",
-    image: "",
-  },
-  {
-    brandName: "Byredo",
-    perfumeName: "Gypsy Water",
-    price: 200,
-    aboutBrand:
-      "Byredo is a Stockholm-based fragrance brand founded in 2006, known for minimalist, artistic scents.",
-    notes: ["Bergamot", "Juniper Berries", "Incense", "Vanilla", "Sandalwood"],
-    fragances: ["Woody", "Fresh", "Unisex", "Aromatic"],
-    perfumer: "Ben Gorham",
-    releaseDate: "2008",
-    genre: "Unisex",
-    image: "",
-  },
-  {
-    brandName: "Amouage",
-    perfumeName: "Interlude Man",
-    price: 340,
-    aboutBrand:
-      "Amouage is a luxury perfume house founded in Oman in 1983, famous for opulent and complex fragrances.",
-    notes: ["Oregano", "Amber", "Opoponax", "Frankincense", "Myrrh", "Leather"],
-    fragances: ["Spicy", "Woody", "Oriental", "Powerful"],
-    perfumer: "Pierre Negrin",
-    releaseDate: "2012",
-    genre: "Men",
-    image: "",
-  },
-  {
-    brandName: "Jo Malone",
-    perfumeName: "Peony & Blush Suede",
-    price: 145,
-    aboutBrand:
-      "Jo Malone London is a British perfume brand founded in 1994, known for elegant and fresh scents.",
-    notes: ["Peony", "Red Apple", "Suede", "Rose", "Carnation"],
-    fragances: ["Floral", "Feminine", "Soft", "Elegant"],
-    perfumer: "Christine Nagel",
-    releaseDate: "2013",
-    genre: "Women",
-    image: "",
-  },
-  {
-    brandName: "Gucci",
-    perfumeName: "Bloom",
-    price: 140,
-    aboutBrand:
-      "Gucci is an Italian luxury fashion brand founded in 1921, known for creativity and high fashion.",
-    notes: ["Rangoon Creeper", "Tuberose", "Jasmine"],
-    fragances: ["Floral", "Elegant", "Romantic", "Feminine"],
-    perfumer: "Alberto Morillas",
-    releaseDate: "2017",
-    genre: "Women",
-    image: "",
-  },
-  {
-    brandName: "Paco Rabanne",
-    perfumeName: "1 Million",
-    price: 110,
-    aboutBrand:
-      "Paco Rabanne is a Spanish-French fashion house founded in 1966, famous for bold and distinctive designs.",
-    notes: [
-      "Blood Mandarin",
-      "Peppermint",
-      "Rose",
-      "Cinnamon",
-      "Leather",
-      "Amber",
-    ],
-    fragances: ["Sweet", "Spicy", "Warm", "Masculine"],
-    perfumer: "Christophe Raynaud, Olivier Pescheux, Michel Girard",
-    releaseDate: "2008",
-    genre: "Men",
-    image: "",
-  },
-  {
-    brandName: "Hermès",
-    perfumeName: "Terre d’Hermès",
-    price: 130,
-    aboutBrand:
-      "Hermès is a French luxury brand founded in 1837, known for timeless elegance and craftsmanship.",
-    notes: ["Orange", "Pepper", "Vetiver", "Cedar", "Patchouli"],
-    fragances: ["Woody", "Earthy", "Elegant", "Masculine"],
-    perfumer: "Jean-Claude Ellena",
-    releaseDate: "2006",
-    genre: "Men",
-    image: "",
-  },
-  {
-    brandName: "Valentino",
-    perfumeName: "Donna Born in Roma",
-    price: 150,
-    aboutBrand:
-      "Valentino is an Italian luxury fashion brand founded in 1960, famous for elegance and romantic style.",
-    notes: ["Blackcurrant", "Bourbon Vanilla", "Jasmine", "Pink Pepper"],
-    fragances: ["Sweet", "Floral", "Modern", "Feminine"],
-    perfumer: "Antoine Maisondieu & Amandine Clerc-Marie",
-    releaseDate: "2019",
-    genre: "Women",
-    image: "",
   },
 ];
