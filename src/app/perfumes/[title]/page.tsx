@@ -2,8 +2,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MoveRight, ArrowBigDownDash, ArrowBigUpDash } from "lucide-react";
-import { perfumes } from "@/assets/assets";
+import {
+  MoveRight,
+  ArrowBigDownDash,
+  ArrowBigUpDash,
+  MoveLeft,
+} from "lucide-react";
+import { bestSellers, perfumes } from "@/assets/assets";
 
 const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
   const { title } = React.use(params);
@@ -16,8 +21,14 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
   const [showAllNotes, setShowAllNotes] = useState(false);
   const [selectedSize, setSelectedSize] = useState("");
 
+  const similarproduct = perfumes.filter(
+    (perfume) =>
+      perfume.brandName.replaceAll(" ", "") === selectedPerfume?.brandName ||
+      perfume.genre === selectedPerfume?.genre
+  );
+
   return (
-    <section className="py-14">
+    <section className="py-14 w-full">
       <main className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 w-[95%] mx-auto">
         {/* First section */}
         <section className="flex flex-col">
@@ -183,6 +194,41 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
             <p className="text-lg font-medium">{selectedPerfume?.aboutBrand}</p>
           )}
         </section>
+      </main>
+
+      {/* similar products  */}
+      <main className=" flex w-[95%] mx-auto gap-8 items-start mt-16 ">
+        <div className=" w-[30%] flex flex-col gap-6 ">
+          <h2 className=" text-3xl mb-4 font-semibold font-header ">
+            Similar products
+          </h2>
+          <div className="flex gap-6">
+            <MoveLeft />
+            <MoveRight />
+          </div>
+          <Link
+            href={"/perfumes"}
+            className=" py-2.5 justify-center font-semibold tracking-wide hover:bg-black duration-500 hover:text-white flex w-full border-2   "
+          >
+            View All Perfumes
+          </Link>
+        </div>
+        <main className=" w-[70%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
+          {similarproduct.splice(0, 4).map((perfume, index) => (
+            <Link
+              href={`/perfumes/${perfume.title.replaceAll(" ", "")}`}
+              className="flex flex-col p-2 hover:scale-105 cursor-pointer duration-500 "
+              key={index}
+            >
+              <Image
+                src={perfume.image}
+                alt=""
+                className="bg-gray-100 h-40 md:h-44 "
+              />
+              <h2 className=" font-semibold mt-2">{perfume.title}</h2>
+            </Link>
+          ))}
+        </main>
       </main>
     </section>
   );
