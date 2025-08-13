@@ -29,7 +29,7 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
       perfume.genre === selectedPerfume?.genre
   );
 
-  const { addItem, inCart, items } = useCart();
+  const { addItem, inCart, items, updateItemQuantity } = useCart();
   console.log(items);
 
   if (!selectedPerfume) {
@@ -111,9 +111,34 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
           </div>
 
           {inCart(`${selectedPerfume.title}-${selectedSize}`) ? (
-            <button className="py-2 mt-5 bg-black text-white hover:opacity-80">
-              In cart
-            </button>
+            items
+              .filter(
+                (item) => item.id === `${selectedPerfume.title}-${selectedSize}`
+              )
+              .map((item) => (
+                <div
+                  key={item.id}
+                  className="flex items-center gap-6 border w-full border-black bg-white py-2 mt-5 justify-center "
+                >
+                  <button
+                    onClick={() =>
+                      updateItemQuantity(item.id, (item.quantity ?? 0) - 1)
+                    }
+                    className="px-2 py-1 bg-gray-200 rounded w-2/5 hover:bg-gray-300"
+                  >
+                    −
+                  </button>
+                  <span className="text-sm font-medium ">{item.quantity}</span>
+                  <button
+                    onClick={() =>
+                      updateItemQuantity(item.id, (item.quantity ?? 0) + 1)
+                    }
+                    className="px-2 py-1 bg-gray-200 rounded w-2/5 hover:bg-gray-300"
+                  >
+                    +
+                  </button>
+                </div>
+              ))
           ) : (
             <button
               className="py-2 mt-5 bg-nature text-white hover:opacity-80"
@@ -133,22 +158,6 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
             height={500}
             className="object-cover"
           />
-          <div className="items-center justify-center flex gap-4 mt-4">
-            {[0, 1, 2].map((i) => (
-              <Image
-                key={i}
-                alt=""
-                src={selectedPerfume.image}
-                width={56}
-                height={56}
-                className={`h-14 w-14 object-cover ${
-                  i === 1
-                    ? "border border-neutral-800 rounded-md"
-                    : "opacity-50"
-                }`}
-              />
-            ))}
-          </div>
         </section>
 
         {/* Third section */}
