@@ -3,6 +3,7 @@ import { Inter, Noto_Serif } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CartContextProvider from "@/context/CartContextProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,9 +29,11 @@ export default function RootLayout({
         cz-shortcut-listen="true"
         className={`${inter.className} ${noto.variable}  antialiased`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <CartContextProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </CartContextProvider>
       </body>
     </html>
   );

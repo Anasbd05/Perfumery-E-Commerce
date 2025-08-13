@@ -8,7 +8,8 @@ import {
   ArrowBigUpDash,
   MoveLeft,
 } from "lucide-react";
-import { bestSellers, perfumes } from "@/assets/assets";
+import { perfumes } from "@/assets/assets";
+import { useCart } from "react-use-cart";
 
 const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
   const { title } = React.use(params);
@@ -20,12 +21,39 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
   const [view, setView] = useState<"details" | "brand">("details");
   const [showAllNotes, setShowAllNotes] = useState(false);
   const [selectedSize, setSelectedSize] = useState("");
+  const [error, setError] = useState("");
 
   const similarproduct = perfumes.filter(
     (perfume) =>
       perfume.brandName.replaceAll(" ", "") === selectedPerfume?.brandName ||
       perfume.genre === selectedPerfume?.genre
   );
+
+  const { addItem, inCart, items } = useCart();
+  console.log(items);
+
+  if (!selectedPerfume) {
+    return (
+      <section className="py-14 w-full text-center">
+        <h2 className="text-2xl font-bold">Perfume not found</h2>
+      </section>
+    );
+  }
+
+  const handleAddToCart = () => {
+    if (!selectedSize) {
+      setError("Please select a size before adding to cart.");
+      return;
+    }
+    setError("");
+    addItem({
+      id: `${selectedPerfume.title}-${selectedSize}`,
+      price: selectedPerfume.price,
+      title: selectedPerfume.title,
+      image: selectedPerfume.image,
+      size: selectedSize,
+    });
+  };
 
   return (
     <section className="py-14 w-full">
@@ -34,20 +62,23 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
         <section className="flex flex-col">
           <div>
             <h1 className="text-4xl font-bold mb-2 font-header text-nature">
-              {selectedPerfume?.brandName}
+              {selectedPerfume.brandName}
             </h1>
-            <h3 className="font-medium">{selectedPerfume?.title}</h3>
+            <h3 className="font-medium">{selectedPerfume.title}</h3>
           </div>
 
           <div className="flex items-center gap-3 mt-10">
             {["30 ml", "50 ml", "100 ml"].map((size, idx) => (
               <button
-                onClick={() => setSelectedSize(size)}
+                onClick={() => {
+                  setSelectedSize(size);
+                  setError("");
+                }}
                 key={idx}
                 className={` ${
                   size === selectedSize
-                    ? " py-2 px-4 bg-black text-white  rounded-sm "
-                    : "py-2 px-4 border border-neutral-300 shadow cursor-pointer  rounded-sm"
+                    ? " py-2 px-4 bg-black text-white rounded-sm "
+                    : "py-2 px-4 border border-neutral-300 shadow cursor-pointer rounded-sm"
                 }`}
               >
                 {size}
@@ -55,8 +86,10 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
             ))}
           </div>
 
+          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+
           <p className="text-2xl font-bold mt-8 mb-6">
-            ${selectedPerfume?.price}
+            ${selectedPerfume.price}
           </p>
 
           <div className="flex flex-col gap-3">
@@ -77,21 +110,38 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
             </Link>
           </div>
 
-          <button className="py-2 mt-5 bg-nature text-white hover:opacity-80">
-            Add to cart
-          </button>
+          {inCart(`${selectedPerfume.title}-${selectedSize}`) ? (
+            <button className="py-2 mt-5 bg-black text-white hover:opacity-80">
+              In cart
+            </button>
+          ) : (
+            <button
+              className="py-2 mt-5 bg-nature text-white hover:opacity-80"
+              onClick={handleAddToCart}
+            >
+              Add to cart
+            </button>
+          )}
         </section>
 
         {/* Second section */}
         <section>
-          <Image alt="" src={selectedPerfume?.image || ""} />
+          <Image
+            alt={selectedPerfume.title}
+            src={selectedPerfume.image}
+            width={500}
+            height={500}
+            className="object-cover"
+          />
           <div className="items-center justify-center flex gap-4 mt-4">
             {[0, 1, 2].map((i) => (
               <Image
                 key={i}
                 alt=""
-                src={selectedPerfume?.image || ""}
-                className={`h-14 w-14 ${
+                src={selectedPerfume.image}
+                width={56}
+                height={56}
+                className={`h-14 w-14 object-cover ${
                   i === 1
                     ? "border border-neutral-800 rounded-md"
                     : "opacity-50"
@@ -133,17 +183,17 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
                 <ul className="flex w-full items-center justify-between">
                   <span className="text-neutral-700">Fragrances</span>
                   <li className="font-semibold capitalize">
-                    {selectedPerfume?.characteristics.slice(0, 2).join(", ")}
+                    {selectedPerfume.characteristics.slice(0, 2).join(", ")}
                   </li>
                 </ul>
                 <ul className="flex w-full items-center justify-between">
                   <span className="text-neutral-700">Perfumer</span>
-                  <li className="font-semibold">{selectedPerfume?.perfumer}</li>
+                  <li className="font-semibold">{selectedPerfume.perfumer}</li>
                 </ul>
                 <ul className="flex w-full items-center justify-between">
                   <span className="text-neutral-700">Release date</span>
                   <li className="font-semibold">
-                    {selectedPerfume?.releaseDate}
+                    {selectedPerfume.releaseDate}
                   </li>
                 </ul>
               </div>
@@ -151,9 +201,9 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
               <div className="flex flex-col gap-1.5">
                 <h3 className="mb-1 font-bold text-nature">Notes</h3>
                 {(showAllNotes
-                  ? selectedPerfume?.notes
-                  : selectedPerfume?.notes.slice(0, 5)
-                )?.map((note, index) => (
+                  ? selectedPerfume.notes
+                  : selectedPerfume.notes.slice(0, 5)
+                ).map((note, index) => (
                   <div key={index} className="w-full flex items-center gap-10">
                     <p className="text-medium text-neutral-700 w-2/4">
                       {note.name}
@@ -176,14 +226,12 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
                   <span className="text-sm font-semibold">
                     {showAllNotes ? (
                       <div className="flex gap-1 items-center">
-                        {" "}
-                        <span>View less</span> <ArrowBigUpDash size={18} />{" "}
+                        <span>View less</span> <ArrowBigUpDash size={18} />
                       </div>
                     ) : (
                       <div className="flex gap-1 items-center">
-                        {" "}
                         <span>View all notes</span>{" "}
-                        <ArrowBigDownDash size={18} />{" "}
+                        <ArrowBigDownDash size={18} />
                       </div>
                     )}
                   </span>
@@ -191,12 +239,12 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
               </div>
             </main>
           ) : (
-            <p className="text-lg font-medium">{selectedPerfume?.aboutBrand}</p>
+            <p className="text-lg font-medium">{selectedPerfume.aboutBrand}</p>
           )}
         </section>
       </main>
 
-      {/* similar products  */}
+      {/* similar products */}
       <main className=" flex w-[95%] mx-auto gap-8 items-start mt-16 ">
         <div className=" w-[30%] flex flex-col gap-6 ">
           <h2 className=" text-3xl mb-4 font-semibold font-header ">
@@ -214,7 +262,7 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
           </Link>
         </div>
         <main className=" w-[70%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
-          {similarproduct.splice(0, 4).map((perfume, index) => (
+          {similarproduct.slice(0, 4).map((perfume, index) => (
             <Link
               href={`/perfumes/${perfume.title.replaceAll(" ", "")}`}
               className="flex flex-col p-2 hover:scale-105 cursor-pointer duration-500 "
@@ -222,8 +270,10 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
             >
               <Image
                 src={perfume.image}
-                alt=""
-                className="bg-gray-100 h-40 md:h-44 "
+                alt={perfume.title}
+                width={176}
+                height={176}
+                className="bg-gray-100 h-40 md:h-44 object-cover"
               />
               <h2 className=" font-semibold mt-2">{perfume.title}</h2>
             </Link>
