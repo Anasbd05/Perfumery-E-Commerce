@@ -2,12 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  MoveRight,
-  ArrowBigDownDash,
-  ArrowBigUpDash,
-  MoveLeft,
-} from "lucide-react";
+import { MoveRight, ArrowBigDownDash, ArrowBigUpDash } from "lucide-react";
 import { perfumes } from "@/assets/assets";
 import { useCart } from "react-use-cart";
 

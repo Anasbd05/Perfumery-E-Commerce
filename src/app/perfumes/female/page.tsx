@@ -9,12 +9,11 @@ const ALLPerfumes = () => {
   const [perfumeSearch, setperfumeSearch] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
-  const [category, setCategory] = useState("All");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   // Close filter drawer when clicking outside
   useEffect(() => {
-    const handleClickOutside = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleClickOutside = (e) => {
       if (
         mobileFiltersOpen &&
         e.target.closest(".mobile-filter-panel") === null &&

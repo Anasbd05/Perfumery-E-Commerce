@@ -14,7 +14,7 @@ const ALLPerfumes = () => {
 
   // Close filter drawer when clicking outside
   useEffect(() => {
-    const handleClickOutside = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleClickOutside = (e) => {
       if (
         mobileFiltersOpen &&
         e.target.closest(".mobile-filter-panel") === null &&
