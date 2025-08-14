@@ -3,28 +3,13 @@ import { perfumes } from "@/assets/assets";
 import { ListFilter, Search, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const ALLPerfumes = () => {
   const [perfumeSearch, setperfumeSearch] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-
-  // Close filter drawer when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (e: React.ChangeEvent<HTMLInputElement>) => {
-      if (
-        mobileFiltersOpen &&
-        e.target.closest(".mobile-filter-panel") === null &&
-        e.target.closest(".filter-btn") === null
-      ) {
-        setMobileFiltersOpen(false);
-      }
-    };
-    window.addEventListener("click", handleClickOutside);
-    return () => window.removeEventListener("click", handleClickOutside);
-  }, [mobileFiltersOpen]);
 
   // Filtering perfumes
   const filteredPerfumes = perfumes.filter((item) => {
