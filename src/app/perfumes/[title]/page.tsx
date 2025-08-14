@@ -254,23 +254,13 @@ const PerfumeDetails = ({ params }: { params: Promise<{ title: string }> }) => {
       </main>
 
       {/* similar products */}
-      <main className=" flex w-[95%] mx-auto gap-8 items-start mt-16 ">
-        <div className=" w-[30%] flex flex-col gap-6 ">
+      <main className=" flex flex-col lg:flex-row w-[95%] mx-auto gap-8 items-start mt-16 ">
+        <div className=" lg:w-[30%] flex flex-col gap-6 ">
           <h2 className=" text-3xl mb-4 font-semibold font-header ">
             Similar products
           </h2>
-          <div className="flex gap-6">
-            <MoveLeft />
-            <MoveRight />
-          </div>
-          <Link
-            href={"/perfumes"}
-            className=" py-2.5 justify-center font-semibold tracking-wide hover:bg-black duration-500 hover:text-white flex w-full border-2   "
-          >
-            View All Perfumes
-          </Link>
         </div>
-        <main className=" w-[70%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
+        <main className=" w-full lg:w-[70%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
           {similarproduct.slice(0, 4).map((perfume, index) => (
             <Link
               href={`/perfumes/${perfume.title.replaceAll(" ", "")}`}

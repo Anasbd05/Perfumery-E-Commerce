@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Categories = () => {
   return (
-    <section className=" py-14 px-4 sm:px-5 lg:w-11/12 mx-auto">
+    <section id="categories" className=" py-14 px-4 sm:px-5 lg:w-11/12 mx-auto">
       <main className="flex flex-col lg:flex-row items-center justify-center w-full gap-x-8 gap-y-2">
         <div className="flex w-full lg:w-2/4 flex-col mb-4">
           <h2 className="font-medium text-neutral-800 text-sm">

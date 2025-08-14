@@ -120,7 +120,9 @@ const CheckoutPage = () => {
                       <p className="">{perfume.price}$</p>x
                       <small className="text-base">{perfume.quantity}</small>
                     </div>
-                    <p className=" font-medium w-1/5  ">{perfume.itemTotal}$</p>
+                    <p className=" font-medium w-1/5 md:flex hidden  ">
+                      {perfume.itemTotal}$
+                    </p>
                   </div>
                 ))}
               </div>
