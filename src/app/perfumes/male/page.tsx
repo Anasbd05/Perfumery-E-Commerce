@@ -1,5 +1,5 @@
 "use client";
-import { bestSellers, perfumes } from "@/assets/assets";
+import { perfumes } from "@/assets/assets";
 import { ListFilter, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,10 +9,11 @@ const ALLPerfumes = () => {
   const [perfumeSearch, setperfumeSearch] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
-  const [category, setCategory] = useState("All");
 
   // Filtering perfumes
   const filteredPerfumes = perfumes.filter((item) => {
+    const matchescategory = item.genre.toLowerCase() === "male";
+
     const matchesSearch =
       item.title.toLowerCase().includes(perfumeSearch.toLowerCase()) ||
       item.brandName.toLowerCase().includes(perfumeSearch.toLowerCase());
@@ -21,10 +22,7 @@ const ALLPerfumes = () => {
       (minPrice === "" || item.price >= Number(minPrice)) &&
       (maxPrice === "" || item.price <= Number(maxPrice));
 
-    const matchesCategory =
-      category === "All" || item.genre.toLowerCase() === category.toLowerCase();
-
-    return matchesSearch && matchesPrice && matchesCategory;
+    return matchescategory && matchesSearch && matchesPrice;
   });
 
   return (
@@ -54,58 +52,11 @@ const ALLPerfumes = () => {
       <section className="py-10 bg-white ">
         <main className="flex items-start gap-10 w-[95%] mx-auto ">
           {/* Filter */}
-          <div className=" xl:w-1/5  p-4 shadow-md h-96 border border-neutral-100 bg-white rounded-lg hidden  xl:flex flex-col gap-5">
+          <div className=" xl:w-1/5  p-4 shadow-md h-60 border border-neutral-100 bg-white rounded-lg hidden  xl:flex flex-col gap-5">
             {/* Filters header */}
             <div className="flex items-center gap-2 py-2 border-b border-neutral-300 ">
               <ListFilter className=" text-nature " />
               <h3 className=" text-lg font-semibold font-header">Filters</h3>
-            </div>
-
-            {/* Categories */}
-            <div className="flex flex-col gap-4 ">
-              <h3 className="font-semibold font-header">Category</h3>
-              <div className="grid grid-cols-2 gap-2">
-                <button
-                  onClick={() => setCategory("All")}
-                  className={` ${
-                    category === "All"
-                      ? " bg-nature text-white  py-2 px-5 rounded-lg "
-                      : "bg-gray-100 text-black py-2 px-5 rounded-lg "
-                  }  `}
-                >
-                  All
-                </button>
-                <button
-                  onClick={() => setCategory("Male")}
-                  className={` ${
-                    category === "Male"
-                      ? " bg-nature text-white  py-2 px-5 rounded-lg "
-                      : "bg-gray-100 text-black py-2 px-5 rounded-lg "
-                  }  `}
-                >
-                  Male
-                </button>
-                <button
-                  onClick={() => setCategory("Female")}
-                  className={` ${
-                    category === "Female"
-                      ? " bg-nature text-white  py-2 px-5 rounded-lg "
-                      : "bg-gray-100 text-black py-2 px-5 rounded-lg "
-                  } `}
-                >
-                  Female
-                </button>
-                <button
-                  onClick={() => setCategory("Unisex")}
-                  className={` ${
-                    category === "Unisex"
-                      ? " bg-nature text-white py-2 px-5 rounded-lg  "
-                      : "bg-gray-100 text-black py-2 px-5 rounded-lg  "
-                  }  `}
-                >
-                  Unisex
-                </button>
-              </div>
             </div>
 
             {/* Price range filter */}
@@ -160,7 +111,7 @@ const ALLPerfumes = () => {
                     </h4>
                     <h2 className="font-medium text-sm ">{perfume.title} </h2>
                   </div>
-                  <span className="  mt-1.5 font-semibold text-nature text-sm ">
+                  <span className=" font-semibold mt-1.5 text-nature text-sm ">
                     ${perfume.price}
                   </span>
                 </div>

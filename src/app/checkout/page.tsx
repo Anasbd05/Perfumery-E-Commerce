@@ -1,7 +1,7 @@
 "use client";
 import {
-  BadgeCheck,
   BaggageClaim,
+  CheckCheck,
   ShoppingCart,
   Truck,
   Wallet,
@@ -33,12 +33,12 @@ const CheckoutPage = () => {
                   Paiement Method
                 </h1>
               </div>
-              <div className="flex flex-col border-2 border-accent rounded-md p-4">
+              <div className="flex flex-col border-2  rounded-md p-4">
                 <div className="flex w-full items-center justify-between">
                   <h2 className="text-xl font-bold font-header">
                     Paiement on shipping
                   </h2>
-                  <BadgeCheck className="text-accent h-6 w-6" />
+                  <CheckCheck className=" h-7 w-7 text-blue-500" />
                 </div>
                 <p className="text-gray-600 ">
                   Paiement will be taken after shipping
@@ -60,12 +60,12 @@ const CheckoutPage = () => {
                   onChange={(e) => setName(e.target.value)}
                   type="text"
                   placeholder="First_Name *"
-                  className="w-2/4 py-3 px-3 rounded-md  border border-accent  outline-none bg-white shadow-md placeholder:text-xs"
+                  className="w-2/4 py-3 px-3 rounded-md  border   outline-none bg-white shadow-md placeholder:text-xs"
                 />
                 <input
                   type="text"
                   placeholder="Last_Name *"
-                  className="w-2/4 py-3 px-3 rounded-md border border-accent  outline-none bg-white shadow-md placeholder:text-xs"
+                  className="w-2/4 py-3 px-3 rounded-md border   outline-none bg-white shadow-md placeholder:text-xs"
                 />
               </div>
               <input
@@ -73,21 +73,21 @@ const CheckoutPage = () => {
                 onChange={(e) => setCity(e.target.value)}
                 type="text"
                 placeholder="City *"
-                className="py-3 px-3  border border-accent  rounded-md outline-none bg-white shadow-md placeholder:text-xs"
+                className="py-3 px-3  border   rounded-md outline-none bg-white shadow-md placeholder:text-xs"
               />
               <input
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 type="text"
                 placeholder="Address *"
-                className="py-3.5 px-3  border border-accent  rounded-md outline-none bg-white shadow-md placeholder:text-xs"
+                className="py-3.5 px-3  border   rounded-md outline-none bg-white shadow-md placeholder:text-xs"
               />
               <input
                 value={number}
                 onChange={(e) => setNumber(e.target.value)}
                 type="text"
                 placeholder="Phone number *"
-                className="py-3.5 px-3  border border-accent  rounded-md outline-none bg-white shadow-md placeholder:text-xs"
+                className="py-3.5 px-3  border   rounded-md outline-none bg-white shadow-md placeholder:text-xs"
               />
             </main>
 

@@ -40,7 +40,7 @@ const Categories = () => {
                 Men perfumes
               </h1>
               <Link
-                href={"/perfumes/men"}
+                href={"/perfumes/male"}
                 className="text-white text-sm font-header "
               >
                 View perfumes
@@ -63,7 +63,7 @@ const Categories = () => {
                 Women perfumes
               </h1>
               <Link
-                href={"/perfumes/women"}
+                href={"/perfumes/female"}
                 className="text-white text-sm font-header "
               >
                 View perfumes
